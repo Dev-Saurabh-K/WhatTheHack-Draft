@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   ChevronLeft,
   Share2,
@@ -44,9 +45,13 @@ const ItemDetails = () => {
     <div className="min-h-screen bg-slate-50 pb-24 relative">
       {/* --- Overlay Header --- */}
       <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-4">
+        
+        <Link to={"/"}>
         <button className="p-2 bg-white/80 backdrop-blur-md rounded-full text-slate-700 shadow-sm hover:bg-white transition-all">
           <ChevronLeft className="w-6 h-6" />
         </button>
+        </Link>
+
         <div className="flex gap-3">
           <button className="p-2 bg-white/80 backdrop-blur-md rounded-full text-slate-700 shadow-sm hover:bg-white transition-all hover:text-indigo-600">
             <Share2 className="w-5 h-5" />

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   X,
   Camera,
   ChevronDown,
   Upload,
   DollarSign,
+  ShoppingCart,
   CalendarDays,
   HeartHandshake,
 } from "lucide-react";
@@ -42,10 +44,13 @@ const CreatePost = () => {
     <div className="min-h-screen bg-white pb-24 relative">
       {/* --- Header --- */}
       <header className="sticky top-0 z-50 bg-white border-b border-slate-100 px-4 py-3 flex items-center justify-between">
+        
+        <Link to={"/"}>
         <button className="p-2 -ml-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors">
           <X className="w-6 h-6" />
         </button>
-        <h1 className="text-lg font-bold text-slate-800">List Item</h1>
+        </Link>
+        <h1 className="text-lg font-bold text-slate-800">Request Item</h1>
         <div className="w-10"></div> {/* Spacer for alignment */}
       </header>
 
@@ -54,7 +59,7 @@ const CreatePost = () => {
         <div
           onClick={handleImageSelect}
           className={`
-            aspect-[4/3] rounded-2xl border-2 border-dashed flex flex-col items-center justify-center cursor-pointer transition-all overflow-hidden relative group
+            aspect-4/3 rounded-2xl border-2 border-dashed flex flex-col items-center justify-center cursor-pointer transition-all overflow-hidden relative group
             ${
               image
                 ? "border-transparent"
@@ -92,11 +97,11 @@ const CreatePost = () => {
           <label className="block text-sm font-bold text-slate-700 mb-3">
             What are you doing?
           </label>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 gap-2">
             {[
-              { id: "sell", label: "Sell", icon: DollarSign },
+              { id: "sell", label: "Request", icon: ShoppingCart },
               { id: "rent", label: "Rent", icon: CalendarDays },
-              { id: "donate", label: "Donate", icon: HeartHandshake },
+              
             ].map((type) => (
               <button
                 key={type.id}
@@ -169,18 +174,6 @@ const CreatePost = () => {
             </div>
           )}
 
-          {listingType === "donate" && (
-            <div className="text-center py-2">
-              <HeartHandshake className="w-8 h-8 text-emerald-500 mx-auto mb-2" />
-              <p className="text-sm font-medium text-emerald-800">
-                Thank you for helping a peer!
-              </p>
-              <p className="text-xs text-emerald-600/70">
-                This item will be listed as{" "}
-                <span className="font-bold">Free</span>.
-              </p>
-            </div>
-          )}
         </section>
 
         {/* --- Item Details --- */}
@@ -225,6 +218,7 @@ const CreatePost = () => {
                   <option value="like-new">Like New</option>
                   <option value="used">Used</option>
                   <option value="heavily-used">Heavily Used</option>
+                  <option value="Doesn't matter">Doesn't matter</option>
                 </select>
                 <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
               </div>
