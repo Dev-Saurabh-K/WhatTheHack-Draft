@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
-  User,
-  MapPin,
   GraduationCap,
   Star,
   LogOut,
@@ -12,7 +10,11 @@ import {
   Trash2,
   Clock,
   CheckCircle2,
-  AlertCircle,
+  Compass,
+  User,
+  PlusSquare,
+  MessageCircle,
+  Home as HomeIcon,
 } from "lucide-react";
 
 // --- Mock Data ---
@@ -281,6 +283,44 @@ const Profile = () => {
           </div>
         )}
       </div>
+      {/* --- Bottom Navigation --- */}
+                  <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-6 py-2 pb-safe z-50 flex justify-between items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)]">
+                    <Link to={"/"}>
+                      <button className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600">
+                        <HomeIcon className="w-6 h-6" />
+                        <span className="text-[10px] font-medium">Home</span>
+                      </button>
+                    </Link>
+            
+                    <Link to={"/Explore"}>
+                      <button className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600">
+                        <Compass className="w-6 h-6" />
+                        <span className="text-[10px] font-medium">Explore</span>
+                      </button>
+                    </Link>
+            
+                    <div className="relative -top-5">
+                      <Link to={"/create/post"}>
+                        <button className="bg-indigo-600 text-white p-4 rounded-full shadow-lg shadow-indigo-200 hover:scale-105 transition-transform">
+                          <PlusSquare className="w-6 h-6" />
+                        </button>
+                      </Link>
+                    </div>
+            
+                    <Link to={"/Chat"}>
+                      <button className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600" >
+                        <MessageCircle className="w-6 h-6" />
+                        <span className="text-[10px] font-medium">Chat</span>
+                      </button>
+                    </Link>
+            
+                    <Link to={"/Profile"}>
+                      <button className="flex flex-col items-center gap-1 p-2 text-indigo-600">
+                        <User className="w-6 h-6" />
+                        <span className="text-[10px] font-medium">Profile</span>
+                      </button>
+                    </Link>
+                  </nav>
     </div>
   );
 };

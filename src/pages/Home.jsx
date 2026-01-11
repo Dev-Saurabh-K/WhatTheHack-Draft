@@ -268,7 +268,7 @@ function Home() {
       </main>
 
       {/* --- Bottom Navigation --- */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-6 py-2 pb-safe z-50 flex justify-between items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)]">
+       <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-6 py-2 pb-safe z-50 flex justify-between items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)]">
         <Link to={"/"}>
           <button className="flex flex-col items-center gap-1 p-2 text-indigo-600">
             <HomeIcon className="w-6 h-6" />
