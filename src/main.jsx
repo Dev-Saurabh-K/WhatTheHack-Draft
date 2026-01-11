@@ -12,6 +12,7 @@ import Profile from './pages/Profile'
 import ItemDetails from './pages/ItemDetails'
 import Register from './pages/Register'
 import Request from './pages/Request'
+import Logo from './pages/logo.jsx'
 
 const router=createBrowserRouter([
   {path:"/",element:<Home/>},
@@ -23,7 +24,8 @@ const router=createBrowserRouter([
   {path:"/profile",element:<Profile/>},
   {path:"/itemdetails",element:<ItemDetails/>},
   {path:"/register",element:<Register/>},
-  {path:"/request",element:<Request/>}
+  {path:"/request",element:<Request/>},
+  {path:"/logo",element:<Logo/>},
 ])
 
 createRoot(document.getElementById('root')).render(
