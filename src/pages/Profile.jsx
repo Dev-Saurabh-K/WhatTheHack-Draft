@@ -107,7 +107,7 @@ const Profile = () => {
           <h1 className="text-xl font-bold text-slate-800 flex items-center gap-1">
             {USER.name}
           </h1>
-          <p className="text-sm text-indigo-600 font-medium mb-1">
+          <p className=" text-sm text-indigo-600 font-medium mb-1">
             {USER.course}
           </p>
           <div className="flex items-center text-xs text-slate-400">
@@ -118,7 +118,7 @@ const Profile = () => {
       </div>
 
       {/* --- Reputation Stats --- */}
-      <div className="px-6 mb-6">
+      <div className="px-6 mb-6 pt-15">
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-4 grid grid-cols-3 divide-x divide-slate-100">
           <div className="flex flex-col items-center gap-1 text-center">
             <span className="text-lg font-bold text-slate-800 flex items-center gap-1">
