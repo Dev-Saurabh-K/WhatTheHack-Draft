@@ -10,6 +10,8 @@ import CreatePost from './pages/CreatePost'
 import Chat from './pages/Chat'
 import Profile from './pages/Profile'
 import ItemDetails from './pages/ItemDetails'
+import Register from './pages/Register'
+import Request from './pages/Request'
 
 const router=createBrowserRouter([
   {path:"/",element:<Home/>},
@@ -19,7 +21,9 @@ const router=createBrowserRouter([
   {path:"/create/post",element:<CreatePost/>},
   {path:"/chat",element:<Chat/>},
   {path:"/profile",element:<Profile/>},
-  {path:"/itemdetails",element:<ItemDetails/>}
+  {path:"/itemdetails",element:<ItemDetails/>},
+  {path:"/register",element:<Register/>},
+  {path:"/request",element:<Request/>}
 ])
 
 createRoot(document.getElementById('root')).render(
