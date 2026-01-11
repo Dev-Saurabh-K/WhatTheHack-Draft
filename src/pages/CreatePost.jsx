@@ -257,6 +257,7 @@ const CreatePost = () => {
           Post Listing
         </button>
       </div>
+      
     </div>
   );
 };
