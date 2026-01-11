@@ -28,6 +28,20 @@ const router = createBrowserRouter([
   { path: "/request", element: <Request /> },
   { path: "/notifications", element: <Notifications /> },
   { path: "/editProfile", element: <EditProfile /> }
+import Logo from './pages/logo.jsx'
+
+const router=createBrowserRouter([
+  {path:"/",element:<Home/>},
+  {path:"/login",element:<Login/>},
+  {path:"/feed",element:<Feed/>},
+  {path:"/explore",element:<Explore/>},
+  {path:"/create/post",element:<CreatePost/>},
+  {path:"/chat",element:<Chat/>},
+  {path:"/profile",element:<Profile/>},
+  {path:"/itemdetails",element:<ItemDetails/>},
+  {path:"/register",element:<Register/>},
+  {path:"/request",element:<Request/>},
+  {path:"/logo",element:<Logo/>},
 ])
 
 createRoot(document.getElementById('root')).render(
