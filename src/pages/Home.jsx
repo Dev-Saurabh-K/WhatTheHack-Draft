@@ -116,13 +116,13 @@ function Home() {
             </div>
           </div>
           <div className="flex items-center gap-3">
+             <Link to={"/notifications"}>
             <button className="p-2 rounded-full hover:bg-slate-200 transition-colors relative">
               <Bell className="w-6 h-6 text-slate-700" />
               <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
             </button>
-            <button className="p-2 rounded-full hover:bg-slate-200 transition-colors">
-              <ShoppingBag className="w-6 h-6 text-slate-700" />
-            </button>
+            </Link>
+            
           </div>
         </div>
 
@@ -198,15 +198,14 @@ function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredItems.map((item) => (
-
-           
+            
             <div
               key={item.id}
               className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow group"
             >
                <Link to={"/itemdetails"}>
               {/* Image Container */}
-              <div className="relative aspect-[4/3] bg-slate-100">
+              <div className="relative aspect-4/3 bg-slate-100">
                 <img
                   src={item.image}
                   alt={item.title}

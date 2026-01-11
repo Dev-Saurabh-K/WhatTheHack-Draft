@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   X,
   Camera,
@@ -42,9 +43,13 @@ const CreatePost = () => {
     <div className="min-h-screen bg-white pb-24 relative">
       {/* --- Header --- */}
       <header className="sticky top-0 z-50 bg-white border-b border-slate-100 px-4 py-3 flex items-center justify-between">
+       
+       <Link to={"/"}>
         <button className="p-2 -ml-2 text-slate-500 hover:bg-slate-50 rounded-full transition-colors">
           <X className="w-6 h-6" />
         </button>
+        </Link>
+
         <h1 className="text-lg font-bold text-slate-800">List Item</h1>
         <div className="w-10"></div> {/* Spacer for alignment */}
       </header>
@@ -54,7 +59,7 @@ const CreatePost = () => {
         <div
           onClick={handleImageSelect}
           className={`
-            aspect-[4/3] rounded-2xl border-2 border-dashed flex flex-col items-center justify-center cursor-pointer transition-all overflow-hidden relative group
+            aspect-4/3 rounded-2xl border-2 border-dashed flex flex-col items-center justify-center cursor-pointer transition-all overflow-hidden relative group
             ${
               image
                 ? "border-transparent"

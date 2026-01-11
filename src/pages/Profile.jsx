@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import {
   User,
   MapPin,
@@ -150,10 +152,13 @@ const Profile = () => {
 
       {/* --- Action Buttons --- */}
       <div className="px-6 flex gap-3 mb-8">
+         <Link to={"/editProfile"}>
         <button className="flex-1 flex items-center justify-center p-2.5 rounded-xl border border-indigo-200 text-indigo-700 font-semibold text-sm hover:bg-indigo-50 transition-colors">
           <Pencil className="w-4 h-4 mr-2" />
           Edit Profile
         </button>
+        </Link>
+
         <button className="flex-1 flex items-center justify-center p-2.5 rounded-xl border border-slate-200 text-red-500 font-semibold text-sm hover:bg-red-50 transition-colors">
           <LogOut className="w-4 h-4 mr-2" />
           Log Out
