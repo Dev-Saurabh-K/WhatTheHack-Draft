@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Bell,
   ShoppingBag,
@@ -157,19 +158,30 @@ function Home() {
       <div className="px-4 py-4 grid grid-cols-2 gap-3">
         <button className="flex flex-col items-center justify-center bg-indigo-50 hover:bg-indigo-100 p-4 rounded-xl border border-indigo-100 transition-colors group">
           <div className="bg-white p-2 rounded-full shadow-sm mb-2 group-hover:scale-110 transition-transform">
-            <PlusSquare className="w-5 h-5 text-indigo-600" />
+            <Link to={"/create/post"}>
+              <PlusSquare className="w-5 h-5 text-indigo-600" />
+            </Link>
           </div>
-          <span className="font-semibold text-indigo-700 text-sm">
-            Sell an Item
-          </span>
+
+          <Link to={"/create/post"}>
+            <span className="font-semibold text-indigo-700 text-sm">
+              Sell an Item
+            </span>
+          </Link>
         </button>
+
         <button className="flex flex-col items-center justify-center bg-emerald-50 hover:bg-emerald-100 p-4 rounded-xl border border-emerald-100 transition-colors group">
           <div className="bg-white p-2 rounded-full shadow-sm mb-2 group-hover:scale-110 transition-transform">
-            <Compass className="w-5 h-5 text-emerald-600" />
+           
+            <Link to={"/request"}>
+             <Compass className="w-5 h-5 text-emerald-600" />
+            </Link>
           </div>
+          <Link to={"/request"}>
           <span className="font-semibold text-emerald-700 text-sm">
             Request Item
           </span>
+          </Link>
         </button>
       </div>
 
@@ -186,10 +198,13 @@ function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredItems.map((item) => (
+
+           
             <div
               key={item.id}
               className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow group"
             >
+               <Link to={"/itemdetails"}>
               {/* Image Container */}
               <div className="relative aspect-[4/3] bg-slate-100">
                 <img
@@ -245,34 +260,51 @@ function Home() {
                   </button>
                 </div>
               </div>
+              </Link>
             </div>
+            
+
           ))}
         </div>
       </main>
 
       {/* --- Bottom Navigation --- */}
       <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-6 py-2 pb-safe z-50 flex justify-between items-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.02)]">
-        <button className="flex flex-col items-center gap-1 p-2 text-indigo-600">
-          <HomeIcon className="w-6 h-6" />
-          <span className="text-[10px] font-medium">Home</span>
-        </button>
-        <button className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600">
-          <Compass className="w-6 h-6" />
-          <span className="text-[10px] font-medium">Explore</span>
-        </button>
-        <div className="relative -top-5">
-          <button className="bg-indigo-600 text-white p-4 rounded-full shadow-lg shadow-indigo-200 hover:scale-105 transition-transform">
-            <PlusSquare className="w-6 h-6" />
+        <Link to={"/"}>
+          <button className="flex flex-col items-center gap-1 p-2 text-indigo-600">
+            <HomeIcon className="w-6 h-6" />
+            <span className="text-[10px] font-medium">Home</span>
           </button>
+        </Link>
+
+        <Link to={"/Explore"}>
+          <button className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600">
+            <Compass className="w-6 h-6" />
+            <span className="text-[10px] font-medium">Explore</span>
+          </button>
+        </Link>
+
+        <div className="relative -top-5">
+          <Link to={"/create/post"}>
+            <button className="bg-indigo-600 text-white p-4 rounded-full shadow-lg shadow-indigo-200 hover:scale-105 transition-transform">
+              <PlusSquare className="w-6 h-6" />
+            </button>
+          </Link>
         </div>
-        <button className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600">
-          <MessageCircle className="w-6 h-6" />
-          <span className="text-[10px] font-medium">Chat</span>
-        </button>
-        <button className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600">
-          <User className="w-6 h-6" />
-          <span className="text-[10px] font-medium">Profile</span>
-        </button>
+
+        <Link to={"/Chat"}>
+          <button className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600">
+            <MessageCircle className="w-6 h-6" />
+            <span className="text-[10px] font-medium">Chat</span>
+          </button>
+        </Link>
+
+        <Link to={"/Profile"}>
+          <button className="flex flex-col items-center gap-1 p-2 text-slate-400 hover:text-slate-600">
+            <User className="w-6 h-6" />
+            <span className="text-[10px] font-medium">Profile</span>
+          </button>
+        </Link>
       </nav>
     </div>
   );
