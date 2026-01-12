@@ -8,8 +8,10 @@ import {
   UserPlus,
   GraduationCap,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-const Register = ({ onNavigateToLogin }) => {
+const Register = () => {
+  const navigate=useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,6 +29,10 @@ const Register = ({ onNavigateToLogin }) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  const onNavigateToLogin=()=>{
+    navigate("/login")
+  }
 
   // 1. Modified: No event argument needed, no e.preventDefault()
   const handleSubmit = async () => {
@@ -65,6 +71,9 @@ const Register = ({ onNavigateToLogin }) => {
       if (response.ok) {
         alert("Registration successful! Please login.");
         onNavigateToLogin();
+
+
+        //navvv to login
       } else {
         alert(data.message || "Registration failed");
       }
