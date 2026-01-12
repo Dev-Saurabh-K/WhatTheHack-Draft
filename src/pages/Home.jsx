@@ -13,6 +13,7 @@ import {
   Heart,
 } from "lucide-react";
 
+import Logo from "./logo";
 // --- Mock Data ---
 const CATEGORIES = [
   { id: "all", label: "All" },
@@ -116,6 +117,12 @@ function Home() {
             </div>
           </div>
           <div className="flex items-center gap-3">
+            {/* logo
+            <div className="w-5 h-5">
+              <Logo/>
+            </div> */}
+
+            {/* bell */}
              <Link to={"/notifications"}>
             <button className="p-2 rounded-full hover:bg-slate-200 transition-colors relative">
               <Bell className="w-6 h-6 text-slate-700" />

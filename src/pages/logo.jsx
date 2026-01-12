@@ -1,7 +1,7 @@
 
 const Logo = () => {
   return (
-     <div className="min-h-screen w-full flex items-center justify-center bg-white">
+     <div className="h-fit w-fit flex items-center justify-center bg-white">
       
       {/* Injecting Alice Font from Google */}
       <style>{`
